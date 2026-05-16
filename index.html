@@ -1,0 +1,1695 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>種牡馬バブルチャート</title>
+  <style>
+    body { margin: 0; background: #eef1f5; color: #152036; font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Segoe UI", system-ui, sans-serif; }
+    .wrap { width: 1200px; margin: 0 auto; padding: 24px; }
+    svg { background: #fbfcfe; box-shadow: 0 12px 32px rgba(23, 32, 51, 0.14); }
+    .title { font-size: 30px; font-weight: 800; fill: #152036; letter-spacing: 0; }
+    .subtitle { font-size: 13px; fill: #5a677a; }
+    .axis { stroke: #283449; stroke-width: 1.2; }
+    .grid { stroke: #d9e0ea; stroke-width: 1; }
+    .tick { font-size: 11.5px; fill: #5a677a; }
+    .axis-label { font-size: 17px; font-weight: 800; fill: #152036; }
+    .leader { stroke: rgba(39, 50, 70, 0.32); stroke-width: 0.7; }
+    .point circle { opacity: 0.82; stroke: #243044; stroke-width: 0.8; }
+    .point:hover circle { opacity: 0.96; stroke-width: 2; }
+    .point-label { font-weight: 650; fill: #172033; paint-order: stroke; stroke: #fbfcfe; stroke-width: 3.2px; stroke-linejoin: round; }
+    .legend { font-size: 11.5px; font-weight: 650; fill: #334155; }
+    .note { font-size: 10.8px; fill: #66758a; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <svg id="chart" xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-label="種牡馬バブルチャート">
+      <rect width="100%" height="100%" fill="#ffffff" />
+      <text x="105" y="40" class="title">種牡馬適性分布</text>
+      <text x="105" y="64" class="subtitle">表示対象: 頭数 上位100種牡馬、芝・ダート両方出走のみ（指定追加あり）、描画件数 101 / 集計対象 594 / full_size</text>
+      <defs>
+        <linearGradient id="cf-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgb(181,34,48)" />
+          <stop offset="50%" stop-color="rgb(247,242,239)" />
+          <stop offset="100%" stop-color="rgb(24,86,181)" />
+        </linearGradient>
+      </defs>
+      <g>
+        <rect x="825" y="42" width="245" height="14" rx="7" fill="url(#cf-gradient)" stroke="#293241" stroke-width="0.45" />
+        <text x="825" y="74" class="legend" text-anchor="start">牝馬寄り</text>
+        <text x="947.5" y="74" class="legend" text-anchor="middle">CF index</text>
+        <text x="1070" y="74" class="legend" text-anchor="end">牡馬寄り</text>
+      </g>
+      <line x1="105.00" y1="112" x2="105.00" y2="1112" class="grid" />
+<line x1="271.67" y1="112" x2="271.67" y2="1112" class="grid" />
+<line x1="438.33" y1="112" x2="438.33" y2="1112" class="grid" />
+<line x1="605.00" y1="112" x2="605.00" y2="1112" class="grid" />
+<line x1="771.67" y1="112" x2="771.67" y2="1112" class="grid" />
+<line x1="938.33" y1="112" x2="938.33" y2="1112" class="grid" />
+<line x1="1105.00" y1="112" x2="1105.00" y2="1112" class="grid" />
+      <line x1="105" y1="1112.00" x2="1105" y2="1112.00" class="grid" />
+<line x1="105" y1="945.33" x2="1105" y2="945.33" class="grid" />
+<line x1="105" y1="778.67" x2="1105" y2="778.67" class="grid" />
+<line x1="105" y1="612.00" x2="1105" y2="612.00" class="grid" />
+<line x1="105" y1="445.33" x2="1105" y2="445.33" class="grid" />
+<line x1="105" y1="278.67" x2="1105" y2="278.67" class="grid" />
+<line x1="105" y1="112.00" x2="1105" y2="112.00" class="grid" />
+      <line x1="105" y1="1112" x2="1105" y2="1112" class="axis" />
+      <line x1="105" y1="112" x2="105" y2="1112" class="axis" />
+      <text x="105.00" y="1146" class="tick" text-anchor="middle">0.13</text>
+<text x="271.67" y="1146" class="tick" text-anchor="middle">0.15</text>
+<text x="438.33" y="1146" class="tick" text-anchor="middle">0.18</text>
+<text x="605.00" y="1146" class="tick" text-anchor="middle">0.20</text>
+<text x="771.67" y="1146" class="tick" text-anchor="middle">0.22</text>
+<text x="938.33" y="1146" class="tick" text-anchor="middle">0.24</text>
+<text x="1105.00" y="1146" class="tick" text-anchor="middle">0.27</text>
+      <text x="89" y="1112.005" class="tick" text-anchor="end">1,205</text>
+<text x="89" y="945.335" class="tick" text-anchor="end">1,362</text>
+<text x="89" y="778.675" class="tick" text-anchor="end">1,520</text>
+<text x="89" y="612.005" class="tick" text-anchor="end">1,678</text>
+<text x="89" y="445.335" class="tick" text-anchor="end">1,836</text>
+<text x="89" y="278.675" class="tick" text-anchor="end">1,993</text>
+<text x="89" y="112.005" class="tick" text-anchor="end">2,151</text>
+      <text x="605" y="1166" class="axis-label" text-anchor="middle">芝適性指数</text>
+      <text transform="translate(32 612) rotate(-90)" class="axis-label" text-anchor="middle">平均距離（m）</text>
+      <g class="point">
+      <circle cx="921.54" cy="419.27" r="26.46" fill="rgb(208,215,229)" />
+      <title>種牡馬名: ドゥラメンテ
+頭数: 293
+本賞/頭: 2,443.65
+CF_index: -0.112
+芝適性指数: 0.241
+平均距離: 1,860.3
+芝の1走当賞金: 1,131.99
+ダートの1走当賞金: 526.89
+牡馬の本賞/頭: 3,402.45
+牝馬の本賞/頭: 1,566.31
+平均馬体重: 479.3kg</title>
+      <line x1="940.60" y1="419.27" x2="961.01" y2="373.89" class="leader" />
+      <text x="961.01" y="377.89" class="point-label" text-anchor="start" style="font-size:10.5px">ドゥラメンテ（479）</text>
+    </g>
+<g class="point">
+      <circle cx="683.74" cy="396.14" r="25.03" fill="rgb(234,202,202)" />
+      <title>種牡馬名: キズナ
+頭数: 450
+本賞/頭: 2,195.83
+CF_index: -0.140
+芝適性指数: 0.209
+平均距離: 1,882.2
+芝の1走当賞金: 872.28
+ダートの1走当賞金: 671.74
+牡馬の本賞/頭: 2,596.04
+牝馬の本賞/頭: 1,754.48
+平均馬体重: 480.5kg</title>
+      <line x1="701.76" y1="396.14" x2="721.77" y2="352.40" class="leader" />
+      <text x="721.77" y="356.40" class="point-label" text-anchor="start" style="font-size:10.4px">キズナ（481）</text>
+    </g>
+<g class="point">
+      <circle cx="828.64" cy="368.67" r="24.68" fill="rgb(213,136,142)" />
+      <title>種牡馬名: ハーツクライ
+頭数: 145
+本賞/頭: 2,137.25
+CF_index: -0.164
+芝適性指数: 0.229
+平均距離: 1,908.2
+芝の1走当賞金: 1,016.98
+ダートの1走当賞金: 576.25
+牡馬の本賞/頭: 2,197.88
+牝馬の本賞/頭: 2,062.63
+平均馬体重: 481.3kg</title>
+      <line x1="846.41" y1="368.67" x2="866.32" y2="325.34" class="leader" />
+      <text x="866.32" y="329.34" class="point-label" text-anchor="start" style="font-size:10.4px">ハーツクライ（481）</text>
+    </g>
+<g class="point">
+      <circle cx="867.79" cy="435.43" r="24.44" fill="rgb(226,227,233)" />
+      <title>種牡馬名: キタサンブラック
+頭数: 295
+本賞/頭: 2,097.03
+CF_index: -0.118
+芝適性指数: 0.234
+平均距離: 1,845.0
+芝の1走当賞金: 1,261.49
+ダートの1走当賞金: 657.94
+牡馬の本賞/頭: 2,831.30
+牝馬の本賞/頭: 1,415.56
+平均馬体重: 477.5kg</title>
+      <line x1="885.39" y1="435.43" x2="905.23" y2="392.38" class="leader" />
+      <text x="905.23" y="396.38" class="point-label" text-anchor="start" style="font-size:10.4px">キタサンブラック（477）</text>
+    </g>
+<g class="point">
+      <circle cx="759.32" cy="733.53" r="23.56" fill="rgb(243,231,229)" />
+      <title>種牡馬名: ロードカナロア
+頭数: 437
+本賞/頭: 1,955.71
+CF_index: -0.129
+芝適性指数: 0.219
+平均距離: 1,562.8
+芝の1走当賞金: 992.49
+ダートの1走当賞金: 651.29
+牡馬の本賞/頭: 2,449.83
+牝馬の本賞/頭: 1,431.30
+平均馬体重: 477.0kg</title>
+      <line x1="776.28" y1="733.53" x2="795.88" y2="691.48" class="leader" />
+      <text x="795.88" y="695.48" class="point-label" text-anchor="start" style="font-size:10.3px">ロードカナロア（477）</text>
+    </g>
+<g class="point">
+      <circle cx="1036.03" cy="568.64" r="21.19" fill="rgb(209,122,129)" />
+      <title>種牡馬名: スワーヴリチャード
+頭数: 182
+本賞/頭: 1,598.79
+CF_index: -0.169
+芝適性指数: 0.257
+平均距離: 1,718.9
+芝の1走当賞金: 1,035.63
+ダートの1走当賞金: 378.28
+牡馬の本賞/頭: 1,594.46
+牝馬の本賞/頭: 1,602.12
+平均馬体重: 468.7kg</title>
+      <line x1="1020.78" y1="568.64" x2="1001.84" y2="529.32" class="leader" />
+      <text x="1001.84" y="533.32" class="point-label" text-anchor="end" style="font-size:10.2px">スワーヴリチャード（469）</text>
+    </g>
+<g class="point">
+      <circle cx="454.57" cy="698.35" r="20.55" fill="rgb(172,190,220)" />
+      <title>種牡馬名: シニスターミニスター
+頭数: 185
+本賞/頭: 1,509.06
+CF_index: -0.100
+芝適性指数: 0.178
+平均距離: 1,596.1
+芝の1走当賞金: 450.00
+ダートの1走当賞金: 562.96
+牡馬の本賞/頭: 2,097.22
+牝馬の本賞/頭: 817.11
+平均馬体重: 471.3kg</title>
+      <line x1="469.36" y1="698.35" x2="488.12" y2="659.77" class="leader" />
+      <text x="488.12" y="663.77" class="point-label" text-anchor="start" style="font-size:10.1px">シニスターミニスター（471）</text>
+    </g>
+<g class="point">
+      <circle cx="634.17" cy="688.53" r="20.52" fill="rgb(210,216,229)" />
+      <title>種牡馬名: グレーターロンドン
+頭数: 83
+本賞/頭: 1,504.78
+CF_index: -0.113
+芝適性指数: 0.202
+平均距離: 1,605.4
+芝の1走当賞金: 637.44
+ダートの1走当賞金: 545.20
+牡馬の本賞/頭: 1,992.22
+牝馬の本賞/頭: 927.55
+平均馬体重: 460.9kg</title>
+      <line x1="648.95" y1="688.53" x2="667.69" y2="649.98" class="leader" />
+      <text x="667.69" y="653.98" class="point-label" text-anchor="start" style="font-size:10.1px">グレーターロンドン（461）</text>
+    </g>
+<g class="point">
+      <circle cx="899.77" cy="558.71" r="20.50" fill="rgb(219,223,232)" />
+      <title>種牡馬名: スクリーンヒーロー
+頭数: 94
+本賞/頭: 1,502.45
+CF_index: -0.116
+芝適性指数: 0.238
+平均距離: 1,728.3
+芝の1走当賞金: 961.41
+ダートの1走当賞金: 468.61
+牡馬の本賞/頭: 2,022.43
+牝馬の本賞/頭: 982.47
+平均馬体重: 473.4kg</title>
+      <line x1="914.53" y1="558.71" x2="938.27" y2="545.23" class="leader" />
+      <text x="938.27" y="549.23" class="point-label" text-anchor="start" style="font-size:10.1px">スクリーンヒーロー（473）</text>
+    </g>
+<g class="point">
+      <circle cx="737.22" cy="804.62" r="20.24" fill="rgb(193,72,83)" />
+      <title>種牡馬名: American Pharoah
+頭数: 63
+本賞/頭: 1,466.03
+CF_index: -0.187
+芝適性指数: 0.216
+平均距離: 1,495.5
+芝の1走当賞金: 1,040.00
+ダートの1走当賞金: 715.15
+牡馬の本賞/頭: 1,324.03
+牝馬の本賞/頭: 1,713.00
+平均馬体重: 488.0kg</title>
+      <line x1="751.79" y1="804.62" x2="770.46" y2="766.40" class="leader" />
+      <text x="770.46" y="770.40" class="point-label" text-anchor="start" style="font-size:10.1px">American Pharoah（488）</text>
+    </g>
+<g class="point">
+      <circle cx="825.26" cy="476.42" r="19.90" fill="rgb(235,204,204)" />
+      <title>種牡馬名: エピファネイア
+頭数: 518
+本賞/頭: 1,420.40
+CF_index: -0.139
+芝適性指数: 0.228
+平均距離: 1,806.2
+芝の1走当賞金: 737.80
+ダートの1走当賞金: 421.07
+牡馬の本賞/頭: 1,718.70
+牝馬の本賞/頭: 1,148.51
+平均馬体重: 473.8kg</title>
+      <line x1="839.58" y1="476.42" x2="858.16" y2="438.59" class="leader" />
+      <text x="858.16" y="442.59" class="point-label" text-anchor="start" style="font-size:10.1px">エピファネイア（474）</text>
+    </g>
+<g class="point">
+      <circle cx="819.59" cy="180.97" r="19.78" fill="rgb(237,235,236)" />
+      <title>種牡馬名: ゴールドシップ
+頭数: 256
+本賞/頭: 1,405.02
+CF_index: -0.122
+芝適性指数: 0.227
+平均距離: 2,085.9
+芝の1走当賞金: 673.33
+ダートの1走当賞金: 388.91
+牡馬の本賞/頭: 1,826.98
+牝馬の本賞/頭: 962.79
+平均馬体重: 463.0kg</title>
+      <line x1="833.84" y1="180.97" x2="852.38" y2="143.26" class="leader" />
+      <text x="852.38" y="147.26" class="point-label" text-anchor="start" style="font-size:10.1px">ゴールドシップ（463）</text>
+    </g>
+<g class="point">
+      <circle cx="554.66" cy="813.71" r="19.78" fill="rgb(246,239,236)" />
+      <title>種牡馬名: ヘニーヒューズ
+頭数: 200
+本賞/頭: 1,404.68
+CF_index: -0.127
+芝適性指数: 0.191
+平均距離: 1,486.9
+芝の1走当賞金: 581.36
+ダートの1走当賞金: 588.41
+牡馬の本賞/頭: 1,773.59
+牝馬の本賞/頭: 996.94
+平均馬体重: 489.6kg</title>
+      <line x1="568.90" y1="813.71" x2="587.44" y2="776.01" class="leader" />
+      <text x="587.44" y="780.01" class="point-label" text-anchor="start" style="font-size:10.1px">ヘニーヒューズ（490）</text>
+    </g>
+<g class="point">
+      <circle cx="706.70" cy="666.88" r="19.50" fill="rgb(160,181,216)" />
+      <title>種牡馬名: モーリス
+頭数: 370
+本賞/頭: 1,367.74
+CF_index: -0.096
+芝適性指数: 0.212
+平均距離: 1,625.9
+芝の1走当賞金: 759.72
+ダートの1走当賞金: 557.29
+牡馬の本賞/頭: 1,995.59
+牝馬の本賞/頭: 733.08
+平均馬体重: 473.8kg</title>
+      <line x1="720.74" y1="666.88" x2="739.20" y2="629.50" class="leader" />
+      <text x="739.20" y="633.50" class="point-label" text-anchor="start" style="font-size:10.1px">モーリス（474）</text>
+    </g>
+<g class="point">
+      <circle cx="733.23" cy="706.59" r="19.40" fill="rgb(191,66,78)" />
+      <title>種牡馬名: ダイワメジャー
+頭数: 177
+本賞/頭: 1,354.74
+CF_index: -0.189
+芝適性指数: 0.216
+平均距離: 1,588.3
+芝の1走当賞金: 763.24
+ダートの1走当賞金: 529.30
+牡馬の本賞/頭: 1,142.60
+牝馬の本賞/頭: 1,518.09
+平均馬体重: 482.1kg</title>
+      <line x1="747.20" y1="706.59" x2="765.63" y2="669.33" class="leader" />
+      <text x="765.63" y="673.33" class="point-label" text-anchor="start" style="font-size:10.1px">ダイワメジャー（482）</text>
+    </g>
+<g class="point">
+      <circle cx="902.23" cy="451.07" r="19.34" fill="rgb(240,237,237)" />
+      <title>種牡馬名: ルーラーシップ
+頭数: 304
+本賞/頭: 1,346.00
+CF_index: -0.123
+芝適性指数: 0.239
+平均距離: 1,830.2
+芝の1走当賞金: 891.15
+ダートの1走当賞金: 432.10
+牡馬の本賞/頭: 1,764.82
+牝馬の本賞/頭: 943.39
+平均馬体重: 476.4kg</title>
+      <line x1="916.15" y1="451.07" x2="934.56" y2="413.88" class="leader" />
+      <text x="934.56" y="417.88" class="point-label" text-anchor="start" style="font-size:10.1px">ルーラーシップ（476）</text>
+    </g>
+<g class="point">
+      <circle cx="732.60" cy="703.95" r="19.12" fill="rgb(216,220,231)" />
+      <title>種牡馬名: ドレフォン
+頭数: 382
+本賞/頭: 1,317.89
+CF_index: -0.115
+芝適性指数: 0.215
+平均距離: 1,590.8
+芝の1走当賞金: 776.36
+ダートの1走当賞金: 539.11
+牡馬の本賞/頭: 1,859.08
+牝馬の本賞/頭: 888.50
+平均馬体重: 481.2kg</title>
+      <line x1="746.36" y1="703.95" x2="774.71" y2="722.91" class="leader" />
+      <text x="774.71" y="726.91" class="point-label" text-anchor="start" style="font-size:10.1px">ドレフォン（481）</text>
+    </g>
+<g class="point">
+      <circle cx="667.36" cy="585.43" r="18.95" fill="rgb(187,200,223)" />
+      <title>種牡馬名: リアルスティール
+頭数: 356
+本賞/頭: 1,296.30
+CF_index: -0.105
+芝適性指数: 0.207
+平均距離: 1,703.0
+芝の1走当賞金: 627.46
+ダートの1走当賞金: 500.25
+牡馬の本賞/頭: 1,847.18
+牝馬の本賞/頭: 769.63
+平均馬体重: 474.3kg</title>
+      <line x1="681.00" y1="585.43" x2="699.31" y2="548.69" class="leader" />
+      <text x="699.31" y="552.69" class="point-label" text-anchor="start" style="font-size:10.1px">リアルスティール（474）</text>
+    </g>
+<g class="point">
+      <circle cx="842.20" cy="334.45" r="18.72" fill="rgb(206,114,122)" />
+      <title>種牡馬名: ハービンジャー
+頭数: 263
+本賞/頭: 1,267.62
+CF_index: -0.172
+芝適性指数: 0.230
+平均距離: 1,940.6
+芝の1走当賞金: 776.50
+ダートの1走当賞金: 427.54
+牡馬の本賞/頭: 1,238.04
+牝馬の本賞/頭: 1,296.10
+平均馬体重: 469.4kg</title>
+      <line x1="855.68" y1="334.45" x2="873.93" y2="297.97" class="leader" />
+      <text x="873.93" y="301.97" class="point-label" text-anchor="start" style="font-size:10.0px">ハービンジャー（469）</text>
+    </g>
+<g class="point">
+      <circle cx="755.31" cy="340.58" r="18.34" fill="rgb(229,186,188)" />
+      <title>種牡馬名: ブラックタイド
+頭数: 100
+本賞/頭: 1,220.15
+CF_index: -0.146
+芝適性指数: 0.219
+平均距離: 1,934.8
+芝の1走当賞金: 742.06
+ダートの1走当賞金: 491.10
+牡馬の本賞/頭: 1,460.44
+牝馬の本賞/頭: 1,066.52
+平均馬体重: 473.3kg</title>
+      <line x1="768.51" y1="340.58" x2="786.65" y2="304.53" class="leader" />
+      <text x="786.65" y="308.53" class="point-label" text-anchor="start" style="font-size:10.0px">ブラックタイド（473）</text>
+    </g>
+<g class="point">
+      <circle cx="902.88" cy="665.82" r="18.32" fill="rgb(183,40,54)" />
+      <title>種牡馬名: アドマイヤマーズ
+頭数: 105
+本賞/頭: 1,217.68
+CF_index: -0.198
+芝適性指数: 0.239
+平均距離: 1,626.9
+芝の1走当賞金: 911.68
+ダートの1走当賞金: 441.45
+牡馬の本賞/頭: 944.28
+牝馬の本賞/頭: 1,430.83
+平均馬体重: 464.6kg</title>
+      <line x1="916.07" y1="665.82" x2="934.20" y2="629.80" class="leader" />
+      <text x="934.20" y="633.80" class="point-label" text-anchor="start" style="font-size:10.0px">アドマイヤマーズ（465）</text>
+    </g>
+<g class="point">
+      <circle cx="834.90" cy="584.38" r="18.00" fill="rgb(61,112,191)" />
+      <title>種牡馬名: ポエティックフレア
+頭数: 31
+本賞/頭: 1,177.90
+CF_index: -0.063
+芝適性指数: 0.229
+平均距離: 1,704.0
+芝の1走当賞金: 715.33
+ダートの1走当賞金: 400.00
+牡馬の本賞/頭: 1,874.63
+牝馬の本賞/頭: 434.73
+平均馬体重: 478.8kg</title>
+      <line x1="847.85" y1="584.38" x2="870.89" y2="571.78" class="leader" />
+      <text x="870.89" y="575.78" class="point-label" text-anchor="start" style="font-size:10.0px">ポエティックフレア（479）</text>
+    </g>
+<g class="point">
+      <circle cx="843.66" cy="696.24" r="17.74" fill="rgb(65,115,192)" />
+      <title>種牡馬名: リオンディーズ
+頭数: 330
+本賞/頭: 1,146.54
+CF_index: -0.064
+芝適性指数: 0.231
+平均距離: 1,598.1
+芝の1走当賞金: 922.81
+ダートの1走当賞金: 506.53
+牡馬の本賞/頭: 1,904.99
+牝馬の本賞/頭: 449.81
+平均馬体重: 475.5kg</title>
+      <line x1="856.43" y1="696.24" x2="874.40" y2="660.90" class="leader" />
+      <text x="874.40" y="664.90" class="point-label" text-anchor="start" style="font-size:10.0px">リオンディーズ（475）</text>
+    </g>
+<g class="point">
+      <circle cx="750.35" cy="390.96" r="17.66" fill="rgb(47,102,187)" />
+      <title>種牡馬名: レイデオロ
+頭数: 294
+本賞/頭: 1,138.07
+CF_index: -0.058
+芝適性指数: 0.218
+平均距離: 1,887.1
+芝の1走当賞金: 703.83
+ダートの1走当賞金: 470.71
+牡馬の本賞/頭: 1,830.12
+牝馬の本賞/頭: 397.29
+平均馬体重: 464.8kg</title>
+      <line x1="763.07" y1="390.96" x2="781.02" y2="355.70" class="leader" />
+      <text x="781.02" y="359.70" class="point-label" text-anchor="start" style="font-size:10.0px">レイデオロ（465）</text>
+    </g>
+<g class="point">
+      <circle cx="755.20" cy="500.82" r="17.64" fill="rgb(246,239,236)" />
+      <title>種牡馬名: ジャスタウェイ
+頭数: 213
+本賞/頭: 1,135.60
+CF_index: -0.126
+芝適性指数: 0.219
+平均距離: 1,783.1
+芝の1走当賞金: 727.15
+ダートの1走当賞金: 481.35
+牡馬の本賞/頭: 1,423.07
+牝馬の本賞/頭: 798.26
+平均馬体重: 479.6kg</title>
+      <line x1="767.90" y1="500.82" x2="785.84" y2="465.58" class="leader" />
+      <text x="785.84" y="469.58" class="point-label" text-anchor="start" style="font-size:10.0px">ジャスタウェイ（480）</text>
+    </g>
+<g class="point">
+      <circle cx="711.44" cy="678.18" r="17.46" fill="rgb(197,84,94)" />
+      <title>種牡馬名: リアルインパクト
+頭数: 128
+本賞/頭: 1,113.60
+CF_index: -0.182
+芝適性指数: 0.213
+平均距離: 1,615.2
+芝の1走当賞金: 636.12
+ダートの1走当賞金: 461.96
+牡馬の本賞/頭: 1,016.88
+牝馬の本賞/頭: 1,237.96
+平均馬体重: 477.9kg</title>
+      <line x1="698.87" y1="678.18" x2="675.99" y2="665.77" class="leader" />
+      <text x="675.99" y="669.77" class="point-label" text-anchor="end" style="font-size:10.0px">リアルインパクト（478）</text>
+    </g>
+<g class="point">
+      <circle cx="827.45" cy="961.80" r="17.22" fill="rgb(207,115,122)" />
+      <title>種牡馬名: ファインニードル
+頭数: 149
+本賞/頭: 1,085.54
+CF_index: -0.171
+芝適性指数: 0.228
+平均距離: 1,346.7
+芝の1走当賞金: 734.10
+ダートの1走当賞金: 417.02
+牡馬の本賞/頭: 1,063.45
+牝馬の本賞/頭: 1,109.82
+平均馬体重: 460.0kg</title>
+      <line x1="839.85" y1="961.80" x2="857.67" y2="927.05" class="leader" />
+      <text x="857.67" y="931.05" class="point-label" text-anchor="start" style="font-size:10.0px">ファインニードル（460）</text>
+    </g>
+<g class="point">
+      <circle cx="694.39" cy="719.90" r="17.20" fill="rgb(183,197,222)" />
+      <title>種牡馬名: パイロ
+頭数: 154
+本賞/頭: 1,083.79
+CF_index: -0.104
+芝適性指数: 0.210
+平均距離: 1,575.7
+芝の1走当賞金: 685.33
+ダートの1走当賞金: 516.00
+牡馬の本賞/頭: 1,520.91
+牝馬の本賞/頭: 623.35
+平均馬体重: 482.8kg</title>
+      <line x1="706.78" y1="719.90" x2="724.59" y2="685.17" class="leader" />
+      <text x="724.59" y="689.17" class="point-label" text-anchor="start" style="font-size:10.0px">パイロ（483）</text>
+    </g>
+<g class="point">
+      <circle cx="468.57" cy="722.65" r="16.87" fill="rgb(212,131,137)" />
+      <title>種牡馬名: ナダル
+頭数: 127
+本賞/頭: 1,045.60
+CF_index: -0.166
+芝適性指数: 0.180
+平均距離: 1,573.1
+芝の1走当賞金: 391.00
+ダートの1走当賞金: 474.86
+牡馬の本賞/頭: 1,066.30
+牝馬の本賞/頭: 1,027.06
+平均馬体重: 488.2kg</title>
+      <line x1="480.72" y1="722.65" x2="498.44" y2="688.30" class="leader" />
+      <text x="498.44" y="692.30" class="point-label" text-anchor="start" style="font-size:9.9px">ナダル（488）</text>
+    </g>
+<g class="point">
+      <circle cx="688.08" cy="470.40" r="16.55" fill="rgb(238,214,213)" />
+      <title>種牡馬名: サトノダイヤモンド
+頭数: 308
+本賞/頭: 1,009.79
+CF_index: -0.136
+芝適性指数: 0.209
+平均距離: 1,811.9
+芝の1走当賞金: 593.72
+ダートの1走当賞金: 453.04
+牡馬の本賞/頭: 1,243.48
+牝馬の本賞/頭: 790.80
+平均馬体重: 474.7kg</title>
+      <line x1="700.00" y1="470.40" x2="717.63" y2="436.42" class="leader" />
+      <text x="717.63" y="440.42" class="point-label" text-anchor="start" style="font-size:9.9px">サトノダイヤモンド（475）</text>
+    </g>
+<g class="point">
+      <circle cx="630.19" cy="523.43" r="16.50" fill="rgb(245,234,232)" />
+      <title>種牡馬名: ダノンバラード
+頭数: 155
+本賞/頭: 1,004.71
+CF_index: -0.128
+芝適性指数: 0.202
+平均距離: 1,761.7
+芝の1走当賞金: 475.34
+ダートの1走当賞金: 410.00
+牡馬の本賞/頭: 1,306.32
+牝馬の本賞/頭: 749.77
+平均馬体重: 453.4kg</title>
+      <line x1="642.07" y1="523.43" x2="659.69" y2="489.50" class="leader" />
+      <text x="659.69" y="493.50" class="point-label" text-anchor="start" style="font-size:9.9px">ダノンバラード（453）</text>
+    </g>
+<g class="point">
+      <circle cx="673.97" cy="833.14" r="16.23" fill="rgb(222,224,232)" />
+      <title>種牡馬名: キンシャサノキセキ
+頭数: 127
+本賞/頭: 974.58
+CF_index: -0.117
+芝適性指数: 0.208
+平均距離: 1,468.5
+芝の1走当賞金: 630.32
+ダートの1走当賞金: 495.55
+牡馬の本賞/頭: 1,296.55
+牝馬の本賞/頭: 637.03
+平均馬体重: 469.0kg</title>
+      <line x1="685.65" y1="833.14" x2="703.20" y2="799.53" class="leader" />
+      <text x="703.20" y="803.53" class="point-label" text-anchor="start" style="font-size:9.9px">キンシャサノキセキ（469）</text>
+    </g>
+<g class="point">
+      <circle cx="896.60" cy="628.11" r="16.10" fill="rgb(219,222,232)" />
+      <title>種牡馬名: マインドユアビスケッツ
+頭数: 248
+本賞/頭: 960.18
+CF_index: -0.116
+芝適性指数: 0.238
+平均距離: 1,662.6
+芝の1走当賞金: 890.79
+ダートの1走当賞金: 437.11
+牡馬の本賞/頭: 1,275.67
+牝馬の本賞/頭: 618.18
+平均馬体重: 482.3kg</title>
+      <line x1="908.19" y1="628.11" x2="925.70" y2="594.65" class="leader" />
+      <text x="925.70" y="598.65" class="point-label" text-anchor="start" style="font-size:9.9px">マインドユアビスケッツ（482）</text>
+    </g>
+<g class="point">
+      <circle cx="858.41" cy="605.29" r="15.99" fill="rgb(207,117,124)" />
+      <title>種牡馬名: デクラレーションオブウォー
+頭数: 246
+本賞/頭: 948.23
+CF_index: -0.170
+芝適性指数: 0.233
+平均距離: 1,684.2
+芝の1走当賞金: 738.63
+ダートの1走当賞金: 392.96
+牡馬の本賞/頭: 934.64
+牝馬の本賞/頭: 963.46
+平均馬体重: 482.1kg</title>
+      <line x1="846.90" y1="605.29" x2="829.43" y2="571.96" class="leader" />
+      <text x="829.43" y="575.96" class="point-label" text-anchor="end" style="font-size:9.9px">デクラレーションオブウォー（482）</text>
+    </g>
+<g class="point">
+      <circle cx="840.13" cy="552.26" r="15.86" fill="rgb(239,218,217)" />
+      <title>種牡馬名: サートゥルナーリア
+頭数: 231
+本賞/頭: 935.09
+CF_index: -0.134
+芝適性指数: 0.230
+平均距離: 1,734.4
+芝の1走当賞金: 692.56
+ダートの1走当賞金: 383.00
+牡馬の本賞/頭: 1,136.87
+牝馬の本賞/頭: 709.25
+平均馬体重: 467.1kg</title>
+      <line x1="828.71" y1="552.26" x2="811.26" y2="519.07" class="leader" />
+      <text x="811.26" y="523.07" class="point-label" text-anchor="end" style="font-size:9.9px">サートゥルナーリア（467）</text>
+    </g>
+<g class="point">
+      <circle cx="594.26" cy="728.88" r="15.79" fill="rgb(228,228,234)" />
+      <title>種牡馬名: ニューイヤーズデイ
+頭数: 183
+本賞/頭: 927.58
+CF_index: -0.119
+芝適性指数: 0.197
+平均距離: 1,567.2
+芝の1走当賞金: 464.74
+ダートの1走当賞金: 432.54
+牡馬の本賞/頭: 1,276.80
+牝馬の本賞/頭: 644.05
+平均馬体重: 476.1kg</title>
+      <line x1="605.63" y1="728.88" x2="623.05" y2="695.77" class="leader" />
+      <text x="623.05" y="699.77" class="point-label" text-anchor="start" style="font-size:9.9px">ニューイヤーズデイ（476）</text>
+    </g>
+<g class="point">
+      <circle cx="231.32" cy="847.72" r="15.71" fill="rgb(220,158,162)" />
+      <title>種牡馬名: ダノンレジェンド
+頭数: 152
+本賞/頭: 919.16
+CF_index: -0.156
+芝適性指数: 0.147
+平均距離: 1,454.7
+芝の1走当賞金: 277.14
+ダートの1走当賞金: 556.22
+牡馬の本賞/頭: 1,001.45
+牝馬の本賞/頭: 841.09
+平均馬体重: 466.0kg</title>
+      <line x1="242.63" y1="847.72" x2="260.03" y2="814.70" class="leader" />
+      <text x="260.03" y="818.70" class="point-label" text-anchor="start" style="font-size:9.9px">ダノンレジェンド（466）</text>
+    </g>
+<g class="point">
+      <circle cx="736.98" cy="656.74" r="15.68" fill="rgb(244,234,231)" />
+      <title>種牡馬名: シスキン
+頭数: 48
+本賞/頭: 915.79
+CF_index: -0.128
+芝適性指数: 0.216
+平均距離: 1,635.5
+芝の1走当賞金: 576.55
+ダートの1走当賞金: 396.67
+牡馬の本賞/頭: 1,231.68
+牝馬の本賞/頭: 708.83
+平均馬体重: 471.9kg</title>
+      <line x1="748.27" y1="656.74" x2="770.66" y2="644.95" class="leader" />
+      <text x="770.66" y="648.95" class="point-label" text-anchor="start" style="font-size:9.9px">シスキン（472）</text>
+    </g>
+<g class="point">
+      <circle cx="762.84" cy="514.24" r="15.62" fill="rgb(244,240,238)" />
+      <title>種牡馬名: ブリックスアンドモルタル
+頭数: 279
+本賞/頭: 908.93
+CF_index: -0.125
+芝適性指数: 0.220
+平均距離: 1,770.4
+芝の1走当賞金: 535.17
+ダートの1走当賞金: 348.58
+牡馬の本賞/頭: 1,179.76
+牝馬の本賞/頭: 643.87
+平均馬体重: 465.7kg</title>
+      <line x1="774.08" y1="514.24" x2="791.46" y2="481.33" class="leader" />
+      <text x="791.46" y="485.33" class="point-label" text-anchor="start" style="font-size:9.9px">ブリックスアンドモルタル（466）</text>
+    </g>
+<g class="point">
+      <circle cx="754.23" cy="596.74" r="15.56" fill="rgb(238,213,213)" />
+      <title>種牡馬名: シルバーステート
+頭数: 344
+本賞/頭: 902.92
+CF_index: -0.136
+芝適性指数: 0.218
+平均距離: 1,692.3
+芝の1走当賞金: 574.58
+ダートの1走当賞金: 381.13
+牡馬の本賞/頭: 1,085.72
+牝馬の本賞/頭: 692.70
+平均馬体重: 470.7kg</title>
+      <line x1="765.43" y1="596.74" x2="792.79" y2="614.09" class="leader" />
+      <text x="792.79" y="618.09" class="point-label" text-anchor="start" style="font-size:9.9px">シルバーステート（471）</text>
+    </g>
+<g class="point">
+      <circle cx="748.39" cy="843.92" r="15.47" fill="rgb(247,242,239)" />
+      <title>種牡馬名: モズアスコット
+頭数: 145
+本賞/頭: 893.96
+CF_index: -0.125
+芝適性指数: 0.218
+平均距離: 1,458.3
+芝の1走当賞金: 640.82
+ダートの1走当賞金: 430.36
+牡馬の本賞/頭: 1,167.75
+牝馬の本賞/頭: 645.38
+平均馬体重: 468.7kg</title>
+      <line x1="759.53" y1="843.92" x2="781.87" y2="832.20" class="leader" />
+      <text x="781.87" y="836.20" class="point-label" text-anchor="start" style="font-size:9.9px">モズアスコット（469）</text>
+    </g>
+<g class="point">
+      <circle cx="666.63" cy="712.93" r="15.47" fill="rgb(140,167,211)" />
+      <title>種牡馬名: ディーマジェスティ
+頭数: 105
+本賞/頭: 893.43
+CF_index: -0.089
+芝適性指数: 0.207
+平均距離: 1,582.3
+芝の1走当賞金: 497.48
+ダートの1走当賞金: 397.23
+牡馬の本賞/頭: 1,283.56
+牝馬の本賞/頭: 430.15
+平均馬体重: 466.0kg</title>
+      <line x1="655.49" y1="712.93" x2="628.16" y2="730.24" class="leader" />
+      <text x="628.16" y="734.24" class="point-label" text-anchor="end" style="font-size:9.9px">ディーマジェスティ（466）</text>
+    </g>
+<g class="point">
+      <circle cx="745.80" cy="867.05" r="15.46" fill="rgb(218,149,154)" />
+      <title>種牡馬名: ミッキーアイル
+頭数: 244
+本賞/頭: 892.93
+CF_index: -0.159
+芝適性指数: 0.217
+平均距離: 1,436.4
+芝の1走当賞金: 748.32
+ダートの1走当賞金: 505.32
+牡馬の本賞/頭: 949.42
+牝馬の本賞/頭: 833.59
+平均馬体重: 466.1kg</title>
+      <line x1="756.93" y1="867.05" x2="779.26" y2="855.34" class="leader" />
+      <text x="779.26" y="859.34" class="point-label" text-anchor="start" style="font-size:9.9px">ミッキーアイル（466）</text>
+    </g>
+<g class="point">
+      <circle cx="821.85" cy="850.25" r="15.45" fill="rgb(196,206,226)" />
+      <title>種牡馬名: アジアエクスプレス
+頭数: 170
+本賞/頭: 891.36
+CF_index: -0.108
+芝適性指数: 0.228
+平均距離: 1,452.3
+芝の1走当賞金: 916.22
+ダートの1走当賞金: 526.68
+牡馬の本賞/頭: 1,197.98
+牝馬の本賞/頭: 521.04
+平均馬体重: 484.3kg</title>
+      <line x1="832.97" y1="850.25" x2="860.30" y2="867.56" class="leader" />
+      <text x="860.30" y="871.56" class="point-label" text-anchor="start" style="font-size:9.9px">アジアエクスプレス（484）</text>
+    </g>
+<g class="point">
+      <circle cx="734.65" cy="776.52" r="15.36" fill="rgb(246,241,239)" />
+      <title>種牡馬名: イスラボニータ
+頭数: 280
+本賞/頭: 881.72
+CF_index: -0.125
+芝適性指数: 0.216
+平均距離: 1,522.1
+芝の1走当賞金: 632.16
+ダートの1走当賞金: 437.08
+牡馬の本賞/頭: 1,142.91
+牝馬の本賞/頭: 627.89
+平均馬体重: 472.6kg</title>
+      <line x1="745.71" y1="776.52" x2="763.01" y2="743.91" class="leader" />
+      <text x="763.01" y="747.91" class="point-label" text-anchor="start" style="font-size:9.9px">イスラボニータ（473）</text>
+    </g>
+<g class="point">
+      <circle cx="561.88" cy="568.64" r="15.12" fill="rgb(247,242,239)" />
+      <title>種牡馬名: ホッコータルマエ
+頭数: 222
+本賞/頭: 857.64
+CF_index: -0.125
+芝適性指数: 0.192
+平均距離: 1,718.9
+芝の1走当賞金: 499.29
+ダートの1走当賞金: 497.67
+牡馬の本賞/頭: 1,060.32
+牝馬の本賞/頭: 586.67
+平均馬体重: 481.7kg</title>
+      <line x1="572.77" y1="568.64" x2="590.00" y2="536.30" class="leader" />
+      <text x="590.00" y="540.30" class="point-label" text-anchor="start" style="font-size:9.8px">ホッコータルマエ（482）</text>
+    </g>
+<g class="point">
+      <circle cx="384.83" cy="646.38" r="15.10" fill="rgb(137,165,210)" />
+      <title>種牡馬名: ロゴタイプ
+頭数: 114
+本賞/頭: 855.93
+CF_index: -0.088
+芝適性指数: 0.168
+平均距離: 1,645.3
+芝の1走当賞金: 447.87
+ダートの1走当賞金: 649.44
+牡馬の本賞/頭: 1,333.87
+牝馬の本賞/頭: 440.67
+平均馬体重: 473.8kg</title>
+      <line x1="395.71" y1="646.38" x2="412.94" y2="614.06" class="leader" />
+      <text x="412.94" y="618.06" class="point-label" text-anchor="start" style="font-size:9.8px">ロゴタイプ（474）</text>
+    </g>
+<g class="point">
+      <circle cx="811.91" cy="885.96" r="15.07" fill="rgb(188,201,224)" />
+      <title>種牡馬名: ネロ
+頭数: 44
+本賞/頭: 852.00
+CF_index: -0.106
+芝適性指数: 0.226
+平均距離: 1,418.5
+芝の1走当賞金: 570.64
+ダートの1走当賞金: 335.00
+牡馬の本賞/頭: 1,098.30
+牝馬の本賞/頭: 460.82
+平均馬体重: 467.4kg</title>
+      <line x1="822.76" y1="885.96" x2="849.98" y2="903.09" class="leader" />
+      <text x="849.98" y="907.09" class="point-label" text-anchor="start" style="font-size:9.8px">ネロ（467）</text>
+    </g>
+<g class="point">
+      <circle cx="883.88" cy="1043.03" r="15.06" fill="rgb(202,211,227)" />
+      <title>種牡馬名: ビッグアーサー
+頭数: 233
+本賞/頭: 851.33
+CF_index: -0.110
+芝適性指数: 0.236
+平均距離: 1,269.8
+芝の1走当賞金: 699.61
+ダートの1走当賞金: 352.67
+牡馬の本賞/頭: 1,154.99
+牝馬の本賞/頭: 517.57
+平均馬体重: 474.6kg</title>
+      <line x1="894.72" y1="1043.03" x2="911.94" y2="1010.77" class="leader" />
+      <text x="911.94" y="1014.77" class="point-label" text-anchor="start" style="font-size:9.8px">ビッグアーサー（475）</text>
+    </g>
+<g class="point">
+      <circle cx="457.57" cy="602.55" r="14.98" fill="rgb(159,180,216)" />
+      <title>種牡馬名: ルヴァンスレーヴ
+頭数: 184
+本賞/頭: 843.07
+CF_index: -0.096
+芝適性指数: 0.178
+平均距離: 1,686.8
+芝の1走当賞金: 350.67
+ダートの1走当賞金: 435.91
+牡馬の本賞/頭: 1,266.61
+牝馬の本賞/頭: 463.19
+平均馬体重: 472.3kg</title>
+      <line x1="468.36" y1="602.55" x2="485.55" y2="570.37" class="leader" />
+      <text x="485.55" y="574.37" class="point-label" text-anchor="start" style="font-size:9.8px">ルヴァンスレーヴ（472）</text>
+    </g>
+<g class="point">
+      <circle cx="847.71" cy="487.09" r="14.73" fill="rgb(206,113,120)" />
+      <title>種牡馬名: ミッキーロケット
+頭数: 78
+本賞/頭: 818.09
+CF_index: -0.172
+芝適性指数: 0.231
+平均距離: 1,796.1
+芝の1走当賞金: 624.76
+ダートの1走当賞金: 340.00
+牡馬の本賞/頭: 798.23
+牝馬の本賞/頭: 842.49
+平均馬体重: 457.1kg</title>
+      <line x1="858.31" y1="487.09" x2="875.44" y2="455.20" class="leader" />
+      <text x="875.44" y="459.20" class="point-label" text-anchor="start" style="font-size:9.8px">ミッキーロケット（457）</text>
+    </g>
+<g class="point">
+      <circle cx="608.36" cy="823.32" r="14.68" fill="rgb(231,193,194)" />
+      <title>種牡馬名: エスポワールシチー
+頭数: 75
+本賞/頭: 813.23
+CF_index: -0.143
+芝適性指数: 0.199
+平均距離: 1,477.8
+芝の1走当賞金: 570.00
+ダートの1走当賞金: 514.91
+牡馬の本賞/頭: 921.89
+牝馬の本賞/頭: 650.23
+平均馬体重: 487.8kg</title>
+      <line x1="618.92" y1="823.32" x2="646.03" y2="840.27" class="leader" />
+      <text x="646.03" y="844.27" class="point-label" text-anchor="start" style="font-size:9.8px">エスポワールシチー（488）</text>
+    </g>
+<g class="point">
+      <circle cx="932.14" cy="445.58" r="14.68" fill="rgb(208,215,229)" />
+      <title>種牡馬名: サトノクラウン
+頭数: 237
+本賞/頭: 813.17
+CF_index: -0.112
+芝適性指数: 0.243
+平均距離: 1,835.4
+芝の1走当賞金: 781.90
+ダートの1走当賞金: 355.87
+牡馬の本賞/頭: 1,129.25
+牝馬の本賞/頭: 520.22
+平均馬体重: 457.5kg</title>
+      <line x1="942.71" y1="445.58" x2="964.82" y2="434.14" class="leader" />
+      <text x="964.82" y="438.14" class="point-label" text-anchor="start" style="font-size:9.8px">サトノクラウン（458）</text>
+    </g>
+<g class="point">
+      <circle cx="763.30" cy="713.25" r="14.49" fill="rgb(227,228,234)" />
+      <title>種牡馬名: アルアイン
+頭数: 153
+本賞/頭: 795.29
+CF_index: -0.119
+芝適性指数: 0.220
+平均距離: 1,582.0
+芝の1走当賞金: 737.20
+ダートの1走当賞金: 479.71
+牡馬の本賞/頭: 1,024.79
+牝馬の本賞/頭: 515.90
+平均馬体重: 471.4kg</title>
+      <line x1="752.86" y1="713.25" x2="725.80" y2="730.12" class="leader" />
+      <text x="725.80" y="734.12" class="point-label" text-anchor="end" style="font-size:9.8px">アルアイン（471）</text>
+    </g>
+<g class="point">
+      <circle cx="688.74" cy="904.13" r="14.49" fill="rgb(241,224,222)" />
+      <title>種牡馬名: ディスクリートキャット
+頭数: 143
+本賞/頭: 795.22
+CF_index: -0.132
+芝適性指数: 0.210
+平均距離: 1,401.3
+芝の1走当賞金: 658.03
+ダートの1走当賞金: 501.41
+牡馬の本賞/頭: 979.00
+牝馬の本賞/頭: 592.51
+平均馬体重: 471.5kg</title>
+      <line x1="699.17" y1="904.13" x2="716.23" y2="872.51" class="leader" />
+      <text x="716.23" y="876.51" class="point-label" text-anchor="start" style="font-size:9.8px">ディスクリートキャット（472）</text>
+    </g>
+<g class="point">
+      <circle cx="953.83" cy="957.79" r="14.08" fill="rgb(243,239,238)" />
+      <title>種牡馬名: タワーオブロンドン
+頭数: 124
+本賞/頭: 755.81
+CF_index: -0.124
+芝適性指数: 0.246
+平均距離: 1,350.5
+芝の1走当賞金: 694.94
+ダートの1走当賞金: 302.09
+牡馬の本賞/頭: 914.77
+牝馬の本賞/頭: 495.38
+平均馬体重: 474.3kg</title>
+      <line x1="963.97" y1="957.79" x2="980.92" y2="926.64" class="leader" />
+      <text x="980.92" y="930.64" class="point-label" text-anchor="start" style="font-size:9.8px">タワーオブロンドン（474）</text>
+    </g>
+<g class="point">
+      <circle cx="651.42" cy="669.62" r="14.03" fill="rgb(229,185,187)" />
+      <title>種牡馬名: サトノアラジン
+頭数: 163
+本賞/頭: 750.23
+CF_index: -0.146
+芝適性指数: 0.204
+平均距離: 1,623.3
+芝の1走当賞金: 488.47
+ダートの1走当賞金: 402.80
+牡馬の本賞/頭: 862.63
+牝馬の本賞/頭: 633.63
+平均馬体重: 478.0kg</title>
+      <line x1="641.33" y1="669.62" x2="624.40" y2="638.54" class="leader" />
+      <text x="624.40" y="642.54" class="point-label" text-anchor="end" style="font-size:9.8px">サトノアラジン（478）</text>
+    </g>
+<g class="point">
+      <circle cx="780.69" cy="474.20" r="13.62" fill="rgb(194,75,86)" />
+      <title>種牡馬名: ヴィクトワールピサ
+頭数: 90
+本賞/頭: 712.79
+CF_index: -0.186
+芝適性指数: 0.222
+平均距離: 1,808.3
+芝の1走当賞金: 658.80
+ダートの1走当賞金: 413.19
+牡馬の本賞/頭: 632.85
+牝馬の本賞/頭: 804.14
+平均馬体重: 479.9kg</title>
+      <line x1="790.50" y1="474.20" x2="822.31" y2="526.23" class="leader" />
+      <text x="822.31" y="530.23" class="point-label" text-anchor="start" style="font-size:9.8px">ヴィクトワールピサ（480）</text>
+    </g>
+<g class="point">
+      <circle cx="493.31" cy="821.31" r="13.61" fill="rgb(198,89,98)" />
+      <title>種牡馬名: カレンブラックヒル
+頭数: 120
+本賞/頭: 711.36
+CF_index: -0.181
+芝適性指数: 0.183
+平均距離: 1,479.7
+芝の1走当賞金: 437.72
+ダートの1走当賞金: 504.47
+牡馬の本賞/頭: 651.81
+牝馬の本賞/頭: 775.02
+平均馬体重: 465.5kg</title>
+      <line x1="503.11" y1="821.31" x2="524.92" y2="810.25" class="leader" />
+      <text x="524.92" y="814.25" class="point-label" text-anchor="start" style="font-size:9.8px">カレンブラックヒル（466）</text>
+    </g>
+<g class="point">
+      <circle cx="749.42" cy="730.36" r="13.52" fill="rgb(244,240,238)" />
+      <title>種牡馬名: タリスマニック
+頭数: 130
+本賞/頭: 703.18
+CF_index: -0.124
+芝適性指数: 0.218
+平均距離: 1,565.8
+芝の1走当賞金: 576.32
+ダートの1走当賞金: 386.19
+牡馬の本賞/頭: 882.47
+牝馬の本賞/頭: 480.60
+平均馬体重: 474.7kg</title>
+      <line x1="759.15" y1="730.36" x2="790.94" y2="782.26" class="leader" />
+      <text x="790.94" y="786.26" class="point-label" text-anchor="start" style="font-size:9.8px">タリスマニック（475）</text>
+    </g>
+<g class="point">
+      <circle cx="832.38" cy="606.88" r="13.45" fill="rgb(82,126,196)" />
+      <title>種牡馬名: ディープブリランテ
+頭数: 65
+本賞/頭: 696.77
+CF_index: -0.070
+芝適性指数: 0.229
+平均距離: 1,682.7
+芝の1走当賞金: 642.27
+ダートの1走当賞金: 361.06
+牡馬の本賞/頭: 1,080.26
+牝馬の本賞/頭: 276.16
+平均馬体重: 481.3kg</title>
+      <line x1="822.70" y1="606.88" x2="800.94" y2="595.87" class="leader" />
+      <text x="800.94" y="599.87" class="point-label" text-anchor="end" style="font-size:9.7px">ディープブリランテ（481）</text>
+    </g>
+<g class="point">
+      <circle cx="616.33" cy="756.88" r="13.42" fill="rgb(154,177,215)" />
+      <title>種牡馬名: コパノリッキー
+頭数: 172
+本賞/頭: 694.82
+CF_index: -0.094
+芝適性指数: 0.200
+平均距離: 1,540.7
+芝の1走当賞金: 566.82
+ダートの1走当賞金: 503.46
+牡馬の本賞/頭: 995.85
+牝馬の本賞/頭: 356.63
+平均馬体重: 490.3kg</title>
+      <line x1="626.00" y1="756.88" x2="647.76" y2="745.88" class="leader" />
+      <text x="647.76" y="749.88" class="point-label" text-anchor="start" style="font-size:9.7px">コパノリッキー（490）</text>
+    </g>
+<g class="point">
+      <circle cx="496.18" cy="622.19" r="13.35" fill="rgb(210,216,229)" />
+      <title>種牡馬名: マジェスティックウォリアー
+頭数: 224
+本賞/頭: 688.47
+CF_index: -0.113
+芝適性指数: 0.183
+平均距離: 1,668.2
+芝の1走当賞金: 488.80
+ダートの1走当賞金: 559.93
+牡馬の本賞/頭: 913.52
+牝馬の本賞/頭: 424.10
+平均馬体重: 485.0kg</title>
+      <line x1="505.79" y1="622.19" x2="522.53" y2="591.89" class="leader" />
+      <text x="522.53" y="595.89" class="point-label" text-anchor="start" style="font-size:9.7px">マジェスティックウォリアー（485）</text>
+    </g>
+<g class="point">
+      <circle cx="579.72" cy="825.43" r="13.35" fill="rgb(232,193,194)" />
+      <title>種牡馬名: レッドファルクス
+頭数: 129
+本賞/頭: 688.47
+CF_index: -0.143
+芝適性指数: 0.195
+平均距離: 1,475.8
+芝の1走当賞金: 416.67
+ダートの1走当賞金: 399.92
+牡馬の本賞/頭: 808.73
+牝馬の本賞/頭: 570.05
+平均馬体重: 462.5kg</title>
+      <line x1="589.34" y1="825.43" x2="606.08" y2="795.12" class="leader" />
+      <text x="606.08" y="799.12" class="point-label" text-anchor="start" style="font-size:9.7px">レッドファルクス（463）</text>
+    </g>
+<g class="point">
+      <circle cx="485.84" cy="454.66" r="13.10" fill="rgb(220,155,159)" />
+      <title>種牡馬名: ゴールドアクター
+頭数: 70
+本賞/頭: 666.14
+CF_index: -0.157
+芝適性指数: 0.182
+平均距離: 1,826.8
+芝の1走当賞金: 413.86
+ダートの1走当賞金: 484.57
+牡馬の本賞/頭: 714.58
+牝馬の本賞/頭: 608.63
+平均馬体重: 456.6kg</title>
+      <line x1="495.28" y1="454.66" x2="511.95" y2="424.64" class="leader" />
+      <text x="511.95" y="428.64" class="point-label" text-anchor="start" style="font-size:9.7px">ゴールドアクター（457）</text>
+    </g>
+<g class="point">
+      <circle cx="262.83" cy="816.77" r="13.03" fill="rgb(53,106,189)" />
+      <title>種牡馬名: モーニン
+頭数: 100
+本賞/頭: 660.13
+CF_index: -0.060
+芝適性指数: 0.152
+平均距離: 1,484.0
+芝の1走当賞金: 235.00
+ダートの1走当賞金: 441.20
+牡馬の本賞/頭: 936.42
+牝馬の本賞/頭: 209.34
+平均馬体重: 478.3kg</title>
+      <line x1="272.22" y1="816.77" x2="288.87" y2="786.83" class="leader" />
+      <text x="288.87" y="790.83" class="point-label" text-anchor="start" style="font-size:9.7px">モーニン（478）</text>
+    </g>
+<g class="point">
+      <circle cx="663.02" cy="739.13" r="12.96" fill="rgb(202,100,109)" />
+      <title>種牡馬名: カリフォルニアクローム
+頭数: 190
+本賞/頭: 653.96
+CF_index: -0.177
+芝適性指数: 0.206
+平均距離: 1,557.5
+芝の1走当賞金: 571.85
+ダートの1走当賞金: 460.13
+牡馬の本賞/頭: 619.02
+牝馬の本賞/頭: 694.47
+平均馬体重: 468.1kg</title>
+      <line x1="653.69" y1="739.13" x2="627.06" y2="755.31" class="leader" />
+      <text x="627.06" y="759.31" class="point-label" text-anchor="end" style="font-size:9.7px">カリフォルニアクローム（468）</text>
+    </g>
+<g class="point">
+      <circle cx="621.80" cy="526.28" r="12.91" fill="rgb(178,194,221)" />
+      <title>種牡馬名: ラブリーデイ
+頭数: 110
+本賞/頭: 649.65
+CF_index: -0.102
+芝適性指数: 0.200
+平均距離: 1,759.0
+芝の1走当賞金: 475.70
+ダートの1走当賞金: 417.67
+牡馬の本賞/頭: 957.12
+牝馬の本賞/頭: 383.86
+平均馬体重: 466.8kg</title>
+      <line x1="631.10" y1="526.28" x2="652.72" y2="515.46" class="leader" />
+      <text x="652.72" y="519.46" class="point-label" text-anchor="start" style="font-size:9.7px">ラブリーデイ（467）</text>
+    </g>
+<g class="point">
+      <circle cx="561.51" cy="728.46" r="12.82" fill="rgb(231,193,194)" />
+      <title>種牡馬名: サンダースノー
+頭数: 183
+本賞/頭: 641.04
+CF_index: -0.143
+芝適性指数: 0.192
+平均距離: 1,567.6
+芝の1走当賞金: 459.77
+ダートの1走当賞金: 458.64
+牡馬の本賞/頭: 771.99
+牝馬の本賞/頭: 545.92
+平均馬体重: 467.5kg</title>
+      <line x1="552.28" y1="728.46" x2="530.69" y2="717.67" class="leader" />
+      <text x="530.69" y="721.67" class="point-label" text-anchor="end" style="font-size:9.7px">サンダースノー（467）</text>
+    </g>
+<g class="point">
+      <circle cx="863.91" cy="754.55" r="12.66" fill="rgb(167,186,218)" />
+      <title>種牡馬名: エイシンヒカリ
+頭数: 72
+本賞/頭: 627.51
+CF_index: -0.098
+芝適性指数: 0.233
+平均距離: 1,542.9
+芝の1走当賞金: 599.31
+ダートの1走当賞金: 315.16
+牡馬の本賞/頭: 846.26
+牝馬の本賞/頭: 321.27
+平均馬体重: 475.7kg</title>
+      <line x1="873.03" y1="754.55" x2="889.57" y2="725.05" class="leader" />
+      <text x="889.57" y="729.05" class="point-label" text-anchor="start" style="font-size:9.7px">エイシンヒカリ（476）</text>
+    </g>
+<g class="point">
+      <circle cx="670.73" cy="364.98" r="12.65" fill="rgb(229,186,187)" />
+      <title>種牡馬名: オルフェーヴル
+頭数: 239
+本賞/頭: 626.77
+CF_index: -0.146
+芝適性指数: 0.207
+平均距離: 1,911.7
+芝の1走当賞金: 723.15
+ダートの1走当賞金: 572.45
+牡馬の本賞/頭: 732.11
+牝馬の本賞/頭: 535.42
+平均馬体重: 465.2kg</title>
+      <line x1="679.83" y1="364.98" x2="696.37" y2="335.48" class="leader" />
+      <text x="696.37" y="339.48" class="point-label" text-anchor="start" style="font-size:9.7px">オルフェーヴル（465）</text>
+    </g>
+<g class="point">
+      <circle cx="753.39" cy="466.81" r="12.58" fill="rgb(206,214,228)" />
+      <title>種牡馬名: フィエールマン
+頭数: 108
+本賞/頭: 620.89
+CF_index: -0.112
+芝適性指数: 0.218
+平均距離: 1,815.3
+芝の1走当賞金: 400.16
+ダートの1走当賞金: 265.91
+牡馬の本賞/頭: 812.89
+牝馬の本賞/頭: 371.70
+平均馬体重: 462.5kg</title>
+      <line x1="744.33" y1="466.81" x2="722.81" y2="456.11" class="leader" />
+      <text x="722.81" y="460.11" class="point-label" text-anchor="end" style="font-size:9.7px">フィエールマン（462）</text>
+    </g>
+<g class="point">
+      <circle cx="728.27" cy="733.11" r="12.49" fill="rgb(220,157,161)" />
+      <title>種牡馬名: アメリカンペイトリオット
+頭数: 197
+本賞/頭: 613.16
+CF_index: -0.156
+芝適性指数: 0.215
+平均距離: 1,563.2
+芝の1走当賞金: 592.70
+ダートの1走当賞金: 415.37
+牡馬の本賞/頭: 663.95
+牝馬の本賞/頭: 561.86
+平均馬体重: 486.0kg</title>
+      <line x1="737.26" y1="733.11" x2="753.76" y2="703.80" class="leader" />
+      <text x="753.76" y="707.80" class="point-label" text-anchor="start" style="font-size:9.7px">アメリカンペイトリオット（486）</text>
+    </g>
+<g class="point">
+      <circle cx="804.76" cy="656.42" r="12.35" fill="rgb(219,154,158)" />
+      <title>種牡馬名: ロジャーバローズ
+頭数: 111
+本賞/頭: 601.66
+CF_index: -0.157
+芝適性指数: 0.225
+平均距離: 1,635.8
+芝の1走当賞金: 510.36
+ダートの1走当賞金: 304.19
+牡馬の本賞/頭: 636.43
+牝馬の本賞/頭: 546.67
+平均馬体重: 479.7kg</title>
+      <line x1="813.65" y1="656.42" x2="835.11" y2="645.80" class="leader" />
+      <text x="835.11" y="649.80" class="point-label" text-anchor="start" style="font-size:9.7px">ロジャーバローズ（480）</text>
+    </g>
+<g class="point">
+      <circle cx="716.31" cy="973.53" r="12.29" fill="rgb(244,234,232)" />
+      <title>種牡馬名: ミスターメロディ
+頭数: 94
+本賞/頭: 596.98
+CF_index: -0.128
+芝適性指数: 0.213
+平均距離: 1,335.6
+芝の1走当賞金: 579.79
+ダートの1走当賞金: 416.74
+牡馬の本賞/頭: 785.29
+牝馬の本賞/頭: 451.30
+平均馬体重: 477.0kg</title>
+      <line x1="725.16" y1="973.53" x2="741.60" y2="944.44" class="leader" />
+      <text x="741.60" y="948.44" class="point-label" text-anchor="start" style="font-size:9.7px">ミスターメロディ（477）</text>
+    </g>
+<g class="point">
+      <circle cx="658.92" cy="1003.74" r="12.25" fill="rgb(211,128,135)" />
+      <title>種牡馬名: フォーウィールドライブ
+頭数: 96
+本賞/頭: 593.27
+CF_index: -0.167
+芝適性指数: 0.205
+平均距離: 1,307.0
+芝の1走当賞金: 404.17
+ダートの1走当賞金: 328.04
+牡馬の本賞/頭: 600.85
+牝馬の本賞/頭: 586.30
+平均馬体重: 465.7kg</title>
+      <line x1="667.73" y1="1003.74" x2="684.16" y2="974.70" class="leader" />
+      <text x="684.16" y="978.70" class="point-label" text-anchor="start" style="font-size:9.7px">フォーウィールドライブ（466）</text>
+    </g>
+<g class="point">
+      <circle cx="951.53" cy="714.41" r="12.14" fill="rgb(181,34,48)" />
+      <title>種牡馬名: インディチャンプ
+頭数: 45
+本賞/頭: 584.44
+CF_index: -0.201
+芝適性指数: 0.245
+平均距離: 1,580.9
+芝の1走当賞金: 630.31
+ダートの1走当賞金: 275.33
+牡馬の本賞/頭: 462.83
+牝馬の本賞/頭: 723.43
+平均馬体重: 471.8kg</title>
+      <line x1="960.28" y1="714.41" x2="976.68" y2="685.50" class="leader" />
+      <text x="976.68" y="689.50" class="point-label" text-anchor="start" style="font-size:9.7px">インディチャンプ（472）</text>
+    </g>
+<g class="point">
+      <circle cx="709.27" cy="738.07" r="12.05" fill="rgb(162,182,217)" />
+      <title>種牡馬名: マクフィ
+頭数: 183
+本賞/頭: 576.95
+CF_index: -0.097
+芝適性指数: 0.212
+平均距離: 1,558.5
+芝の1走当賞金: 651.98
+ダートの1走当賞金: 475.66
+牡馬の本賞/頭: 856.88
+牝馬の本賞/頭: 317.65
+平均馬体重: 472.2kg</title>
+      <line x1="700.60" y1="738.07" x2="684.22" y2="709.27" class="leader" />
+      <text x="684.22" y="713.27" class="point-label" text-anchor="end" style="font-size:9.7px">マクフィ（472）</text>
+    </g>
+<g class="point">
+      <circle cx="755.70" cy="518.15" r="11.95" fill="rgb(37,95,184)" />
+      <title>種牡馬名: トーセンラー
+頭数: 70
+本賞/頭: 568.70
+CF_index: -0.055
+芝適性指数: 0.219
+平均距離: 1,766.7
+芝の1走当賞金: 668.75
+ダートの1走当賞金: 442.22
+牡馬の本賞/頭: 1,039.50
+牝馬の本賞/頭: 215.60
+平均馬体重: 449.2kg</title>
+      <line x1="747.09" y1="518.15" x2="715.75" y2="568.08" class="leader" />
+      <text x="715.75" y="572.08" class="point-label" text-anchor="end" style="font-size:9.7px">トーセンラー（449）</text>
+    </g>
+<g class="point">
+      <circle cx="705.46" cy="463.32" r="11.90" fill="rgb(190,202,224)" />
+      <title>種牡馬名: コントレイル
+頭数: 107
+本賞/頭: 564.63
+CF_index: -0.106
+芝適性指数: 0.212
+平均距離: 1,818.6
+芝の1走当賞金: 461.49
+ダートの1走当賞金: 339.41
+牡馬の本賞/頭: 767.48
+牝馬の本賞/頭: 324.51
+平均馬体重: 475.0kg</title>
+      <line x1="696.89" y1="463.32" x2="680.56" y2="434.69" class="leader" />
+      <text x="680.56" y="438.69" class="point-label" text-anchor="end" style="font-size:9.7px">コントレイル（475）</text>
+    </g>
+<g class="point">
+      <circle cx="459.12" cy="863.88" r="11.69" fill="rgb(226,177,179)" />
+      <title>種牡馬名: シャンハイボビー
+頭数: 162
+本賞/頭: 548.01
+CF_index: -0.149
+芝適性指数: 0.178
+平均距離: 1,439.4
+芝の1走当賞金: 295.87
+ダートの1走当賞金: 366.59
+牡馬の本賞/頭: 622.00
+牝馬の本賞/頭: 475.83
+平均馬体重: 480.9kg</title>
+      <line x1="467.54" y1="863.88" x2="483.81" y2="835.49" class="leader" />
+      <text x="483.81" y="839.49" class="point-label" text-anchor="start" style="font-size:9.6px">シャンハイボビー（481）</text>
+    </g>
+<g class="point">
+      <circle cx="653.37" cy="590.50" r="11.24" fill="rgb(225,174,177)" />
+      <title>種牡馬名: シュヴァルグラン
+頭数: 119
+本賞/頭: 513.63
+CF_index: -0.150
+芝適性指数: 0.205
+平均距離: 1,698.2
+芝の1走当賞金: 445.29
+ダートの1走当賞金: 365.68
+牡馬の本賞/頭: 571.72
+牝馬の本賞/頭: 443.70
+平均馬体重: 465.9kg</title>
+      <line x1="645.28" y1="590.50" x2="619.13" y2="605.91" class="leader" />
+      <text x="619.13" y="609.91" class="point-label" text-anchor="end" style="font-size:9.6px">シュヴァルグラン（466）</text>
+    </g>
+<g class="point">
+      <circle cx="714.35" cy="545.61" r="11.06" fill="rgb(213,136,142)" />
+      <title>種牡馬名: アニマルキングダム
+頭数: 79
+本賞/頭: 499.89
+CF_index: -0.164
+芝適性指数: 0.213
+平均距離: 1,740.7
+芝の1走当賞金: 547.27
+ダートの1走当賞金: 395.00
+牡馬の本賞/頭: 514.98
+牝馬の本賞/頭: 482.76
+平均馬体重: 475.8kg</title>
+      <line x1="722.31" y1="545.61" x2="743.41" y2="535.44" class="leader" />
+      <text x="743.41" y="539.44" class="point-label" text-anchor="start" style="font-size:9.6px">アニマルキングダム（476）</text>
+    </g>
+<g class="point">
+      <circle cx="749.12" cy="592.30" r="11.02" fill="rgb(181,196,222)" />
+      <title>種牡馬名: バゴ
+頭数: 142
+本賞/頭: 497.18
+CF_index: -0.103
+芝適性指数: 0.218
+平均距離: 1,696.5
+芝の1走当賞金: 554.48
+ダートの1走当賞金: 371.80
+牡馬の本賞/頭: 678.92
+牝馬の本賞/頭: 275.69
+平均馬体重: 465.5kg</title>
+      <line x1="741.19" y1="592.30" x2="715.10" y2="607.61" class="leader" />
+      <text x="715.10" y="611.61" class="point-label" text-anchor="end" style="font-size:9.6px">バゴ（466）</text>
+    </g>
+<g class="point">
+      <circle cx="642.88" cy="481.17" r="10.98" fill="rgb(176,192,221)" />
+      <title>種牡馬名: ビーチパトロール
+頭数: 133
+本賞/頭: 494.16
+CF_index: -0.101
+芝適性指数: 0.203
+平均距離: 1,801.7
+芝の1走当賞金: 466.53
+ダートの1走当賞金: 391.74
+牡馬の本賞/頭: 674.66
+牝馬の本賞/頭: 267.76
+平均馬体重: 466.3kg</title>
+      <line x1="650.78" y1="481.17" x2="671.86" y2="471.03" class="leader" />
+      <text x="671.86" y="475.03" class="point-label" text-anchor="start" style="font-size:9.6px">ビーチパトロール（466）</text>
+    </g>
+<g class="point">
+      <circle cx="834.43" cy="627.69" r="10.85" fill="rgb(213,136,142)" />
+      <title>種牡馬名: ダンカーク
+頭数: 107
+本賞/頭: 484.39
+CF_index: -0.164
+芝適性指数: 0.229
+平均距離: 1,663.0
+芝の1走当賞金: 857.92
+ダートの1走当賞金: 480.21
+牡馬の本賞/頭: 500.92
+牝馬の本賞/頭: 469.34
+平均馬体重: 484.2kg</title>
+      <line x1="842.23" y1="627.69" x2="873.27" y2="676.24" class="leader" />
+      <text x="873.27" y="680.24" class="point-label" text-anchor="start" style="font-size:9.6px">ダンカーク（484）</text>
+    </g>
+<g class="point">
+      <circle cx="875.30" cy="307.83" r="10.83" fill="rgb(24,86,181)" />
+      <title>種牡馬名: ノヴェリスト
+頭数: 56
+本賞/頭: 483.46
+CF_index: -0.050
+芝適性指数: 0.235
+平均距離: 1,965.8
+芝の1走当賞金: 677.79
+ダートの1走当賞金: 347.93
+牡馬の本賞/頭: 972.76
+牝馬の本賞/頭: 189.89
+平均馬体重: 471.0kg</title>
+      <line x1="883.10" y1="307.83" x2="899.14" y2="280.42" class="leader" />
+      <text x="899.14" y="284.42" class="point-label" text-anchor="start" style="font-size:9.6px">ノヴェリスト（471）</text>
+    </g>
+<g class="point">
+      <circle cx="604.23" cy="499.66" r="10.75" fill="rgb(39,96,185)" />
+      <title>種牡馬名: ウインブライト
+頭数: 100
+本賞/頭: 477.41
+CF_index: -0.055
+芝適性指数: 0.198
+平均距離: 1,784.2
+芝の1走当賞金: 355.15
+ダートの1走当賞金: 323.64
+牡馬の本賞/頭: 682.56
+牝馬の本賞/頭: 142.68
+平均馬体重: 456.2kg</title>
+      <line x1="596.49" y1="499.66" x2="580.48" y2="472.35" class="leader" />
+      <text x="580.48" y="476.35" class="point-label" text-anchor="end" style="font-size:9.6px">ウインブライト（456）</text>
+    </g>
+<g class="point">
+      <circle cx="173.97" cy="1021.38" r="10.72" fill="rgb(103,141,202)" />
+      <title>種牡馬名: ベストウォーリア
+頭数: 92
+本賞/頭: 475.46
+CF_index: -0.077
+芝適性指数: 0.140
+平均距離: 1,290.3
+芝の1走当賞金: 200.00
+ダートの1走当賞金: 453.22
+牡馬の本賞/頭: 821.55
+牝馬の本賞/頭: 231.91
+平均馬体重: 466.9kg</title>
+      <line x1="181.69" y1="1021.38" x2="197.69" y2="994.10" class="leader" />
+      <text x="197.69" y="998.10" class="point-label" text-anchor="start" style="font-size:9.6px">ベストウォーリア（467）</text>
+    </g>
+<g class="point">
+      <circle cx="828.71" cy="737.33" r="10.66" fill="rgb(179,195,221)" />
+      <title>種牡馬名: ダノンプレミアム
+頭数: 64
+本賞/頭: 471.09
+CF_index: -0.103
+芝適性指数: 0.229
+平均距離: 1,559.2
+芝の1走当賞金: 581.11
+ダートの1走当賞金: 329.23
+牡馬の本賞/頭: 662.85
+牝馬の本賞/頭: 266.97
+平均馬体重: 461.1kg</title>
+      <line x1="836.39" y1="737.33" x2="867.37" y2="785.66" class="leader" />
+      <text x="867.37" y="789.66" class="point-label" text-anchor="start" style="font-size:9.6px">ダノンプレミアム（461）</text>
+    </g>
+<g class="point">
+      <circle cx="474.01" cy="706.07" r="10.53" fill="rgb(175,192,220)" />
+      <title>種牡馬名: ゴールドドリーム
+頭数: 112
+本賞/頭: 461.57
+CF_index: -0.101
+芝適性指数: 0.180
+平均距離: 1,588.8
+芝の1走当賞金: 312.50
+ダートの1走当賞金: 375.18
+牡馬の本賞/頭: 627.73
+牝馬の本賞/頭: 247.94
+平均馬体重: 472.6kg</title>
+      <line x1="466.43" y1="706.07" x2="450.48" y2="679.01" class="leader" />
+      <text x="450.48" y="683.01" class="point-label" text-anchor="end" style="font-size:9.6px">ゴールドドリーム（473）</text>
+    </g>
+<g class="point">
+      <circle cx="882.72" cy="307.94" r="10.19" fill="rgb(219,222,232)" />
+      <title>種牡馬名: エイシンフラッシュ
+頭数: 77
+本賞/頭: 437.84
+CF_index: -0.116
+芝適性指数: 0.236
+平均距離: 1,965.7
+芝の1走当賞金: 991.72
+ダートの1走当賞金: 501.15
+牡馬の本賞/頭: 582.00
+牝馬の本賞/頭: 282.00
+平均馬体重: 469.5kg</title>
+      <line x1="890.05" y1="307.94" x2="920.90" y2="355.67" class="leader" />
+      <text x="920.90" y="359.67" class="point-label" text-anchor="start" style="font-size:9.6px">エイシンフラッシュ（470）</text>
+    </g>
+<g class="point">
+      <circle cx="843.47" cy="608.04" r="9.72" fill="rgb(207,116,123)" />
+      <title>種牡馬名: ベンバトル
+頭数: 57
+本賞/頭: 406.49
+CF_index: -0.171
+芝適性指数: 0.231
+平均距離: 1,681.6
+芝の1走当賞金: 453.25
+ダートの1走当賞金: 248.89
+牡馬の本賞/頭: 398.79
+牝馬の本賞/頭: 413.93
+平均馬体重: 468.5kg</title>
+      <line x1="850.47" y1="608.04" x2="876.19" y2="622.76" class="leader" />
+      <text x="876.19" y="626.76" class="point-label" text-anchor="start" style="font-size:9.5px">ベンバトル（469）</text>
+    </g>
+<g class="point">
+      <circle cx="783.29" cy="809.06" r="9.60" fill="rgb(213,135,140)" />
+      <title>種牡馬名: アドマイヤムーン
+頭数: 73
+本賞/頭: 398.37
+CF_index: -0.164
+芝適性指数: 0.222
+平均距離: 1,491.3
+芝の1走当賞金: 475.96
+ダートの1走当賞金: 296.88
+牡馬の本賞/頭: 407.90
+牝馬の本賞/頭: 385.45
+平均馬体重: 470.6kg</title>
+      <line x1="776.38" y1="809.06" x2="750.69" y2="823.73" class="leader" />
+      <text x="750.69" y="827.73" class="point-label" text-anchor="end" style="font-size:9.5px">アドマイヤムーン（471）</text>
+    </g>
+<g class="point">
+      <circle cx="696.21" cy="741.56" r="9.59" fill="rgb(164,184,217)" />
+      <title>種牡馬名: メイショウボーラー
+頭数: 54
+本賞/頭: 397.74
+CF_index: -0.097
+芝適性指数: 0.211
+平均距離: 1,555.2
+芝の1走当賞金: 574.44
+ダートの1走当賞金: 430.84
+牡馬の本賞/頭: 609.58
+牝馬の本賞/頭: 228.27
+平均馬体重: 481.2kg</title>
+      <line x1="703.12" y1="741.56" x2="728.80" y2="756.22" class="leader" />
+      <text x="728.80" y="760.22" class="point-label" text-anchor="start" style="font-size:9.5px">メイショウボーラー（481）</text>
+    </g>
+<g class="point">
+      <circle cx="191.47" cy="608.04" r="9.19" fill="rgb(199,208,226)" />
+      <title>種牡馬名: クリソベリル
+頭数: 77
+本賞/頭: 372.64
+CF_index: -0.109
+芝適性指数: 0.142
+平均距離: 1,681.6
+芝の1走当賞金: 165.00
+ダートの1走当賞金: 360.30
+牡馬の本賞/頭: 514.49
+牝馬の本賞/頭: 227.05
+平均馬体重: 493.4kg</title>
+      <line x1="198.08" y1="608.04" x2="213.66" y2="582.52" class="leader" />
+      <text x="213.66" y="586.52" class="point-label" text-anchor="start" style="font-size:9.5px">クリソベリル（493）</text>
+    </g>
+<g class="point">
+      <circle cx="449.68" cy="920.61" r="9.01" fill="rgb(227,180,182)" />
+      <title>種牡馬名: ミスチヴィアスアレックス
+頭数: 51
+本賞/頭: 361.51
+CF_index: -0.148
+芝適性指数: 0.177
+平均距離: 1,385.7
+芝の1走当賞金: 296.67
+ダートの1走当賞金: 375.00
+牡馬の本賞/頭: 430.06
+牝馬の本賞/頭: 324.12
+平均馬体重: 454.2kg</title>
+      <line x1="456.16" y1="920.61" x2="471.68" y2="895.30" class="leader" />
+      <text x="471.68" y="899.30" class="point-label" text-anchor="start" style="font-size:9.5px">ミスチヴィアスアレックス（454）</text>
+    </g>
+<g class="point">
+      <circle cx="582.08" cy="762.37" r="8.80" fill="rgb(213,136,142)" />
+      <title>種牡馬名: ストロングリターン
+頭数: 80
+本賞/頭: 349.14
+CF_index: -0.164
+芝適性指数: 0.195
+平均距離: 1,535.5
+芝の1走当賞金: 360.49
+ダートの1走当賞金: 344.27
+牡馬の本賞/頭: 361.05
+牝馬の本賞/頭: 338.36
+平均馬体重: 476.4kg</title>
+      <line x1="575.75" y1="762.37" x2="550.28" y2="776.68" class="leader" />
+      <text x="550.28" y="780.68" class="point-label" text-anchor="end" style="font-size:9.5px">ストロングリターン（476）</text>
+    </g>
+<g class="point">
+      <circle cx="778.75" cy="530.72" r="6.65" fill="rgb(228,183,185)" />
+      <title>種牡馬名: ホークビル
+頭数: 63
+本賞/頭: 237.46
+CF_index: -0.147
+芝適性指数: 0.222
+平均距離: 1,754.8
+芝の1走当賞金: 431.90
+ダートの1走当賞金: 272.00
+牡馬の本賞/頭: 278.78
+牝馬の本賞/頭: 206.47
+平均馬体重: 462.9kg</title>
+      <line x1="778.75" y1="530.72" x2="778.75" y2="495.35" class="leader" />
+      <text x="778.75" y="499.35" class="point-label" text-anchor="middle" style="font-size:9.4px">ホークビル（463）</text>
+    </g>
+<g class="point">
+      <circle cx="576.70" cy="814.97" r="6.24" fill="rgb(189,58,70)" />
+      <title>種牡馬名: ダノンスマッシュ
+頭数: 73
+本賞/頭: 219.85
+CF_index: -0.192
+芝適性指数: 0.194
+平均距離: 1,485.7
+芝の1走当賞金: 325.36
+ダートの1走当賞金: 314.29
+牡馬の本賞/頭: 180.06
+牝馬の本賞/頭: 249.21
+平均馬体重: 461.8kg</title>
+      <line x1="581.19" y1="814.97" x2="610.94" y2="857.78" class="leader" />
+      <text x="610.94" y="861.78" class="point-label" text-anchor="start" style="font-size:9.3px">ダノンスマッシュ（462）</text>
+    </g>
+<g class="point">
+      <circle cx="752.49" cy="737.65" r="4.72" fill="rgb(233,199,200)" />
+      <title>種牡馬名: ノーブルミッション
+頭数: 76
+本賞/頭: 163.70
+CF_index: -0.141
+芝適性指数: 0.218
+平均距離: 1,558.9
+芝の1走当賞金: 351.90
+ダートの1走当賞金: 234.29
+牡馬の本賞/頭: 198.38
+牝馬の本賞/頭: 135.62
+平均馬体重: 465.2kg</title>
+      <line x1="752.49" y1="737.65" x2="752.49" y2="780.82" class="leader" />
+      <text x="752.49" y="784.82" class="point-label" text-anchor="middle" style="font-size:9.3px">ノーブルミッション（465）</text>
+    </g>
+      <text x="105" y="1184" class="note">バブルサイズ: 本賞/頭（面積比例） / 色: CF index（青=牡馬寄り、赤=牝馬寄り） / 種牡馬名横は平均馬体重（kg）</text>
+    </svg>
+  </div>
+</body>
+</html>
